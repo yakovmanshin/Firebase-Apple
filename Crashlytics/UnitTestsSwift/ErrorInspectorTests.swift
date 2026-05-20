@@ -111,7 +111,7 @@ import Testing
 
     let description = ErrorInspector.identityDescription(for: error)
 
-    #expect(description == nil)
+    #expect(description == "TEST_ErrorDomainFromProtocol.321")
   }
 }
 

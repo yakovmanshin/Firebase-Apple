@@ -18,7 +18,7 @@
 
 import PackageDescription
 
-let firebaseVersion = "12.16.0"
+let firebaseVersion = "12.17.0"
 
 let shouldUseSourceFirestore = Context.environment["FIREBASE_SOURCE_FIRESTORE"] != nil
 
@@ -567,7 +567,11 @@ let package = Package(
     .target(
       name: "FirebaseCrashlyticsSwift",
       dependencies: ["FirebaseRemoteConfigInterop"],
-      path: "Crashlytics/Crashlytics/Rollouts"
+      path: "Crashlytics/Crashlytics",
+      sources: [
+        "Rollouts",
+        "SwiftUtilities",
+      ]
     ),
     .testTarget(
       name: "FirebaseCrashlyticsSwiftUnit",
@@ -1413,6 +1417,7 @@ func firebaseCrashlyticsTarget() -> Target {
       "CrashlyticsInputFiles.xcfilelist",
       "third_party/libunwind/LICENSE",
       "Crashlytics/Rollouts",
+      "Crashlytics/SwiftUtilities",
     ],
     sources: [
       "Crashlytics",
